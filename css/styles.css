@@ -1,0 +1,18 @@
+#show-order {
+    display: none;
+  }
+  
+  .order {
+    cursor: pointer;
+    color: black;
+  }
+  
+  .order:hover {
+    text-decoration: underline;
+  }  
+
+  .pizimg{
+    background-image: url(pizza.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
