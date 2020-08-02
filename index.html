@@ -45,20 +45,19 @@
           
             <div class="form-group">
               <label for="amount">Number of Pizzas</label>
-              <input type="number" class="form-control number" required>
+              <input type="number" class="form-control number" min="1" max="5" required>
             </div>
-            <p>Do you want your pizza delivered to you?</p>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="delivery-yes">Yes</label>
-              <input class="form-check-input" type="radio" name="delivery-yes" id="delivery-yes" value="delivery-yes" >
+            <div class="form-group">
+              <label for="delivery">Do you want it delivered?</label>
+              <select class="form-control">
+                <option id="yes" value="yes">Yes</option>
+                <option id="no" value="no">No</option>
+              </select>
             </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="delivery-no">No</label>
-              <input  type="radio" class="form-check-input" name="delivery-no" id="delivery-no" value="delivery-no">
-            </div>
-          </div>
+          
             <button type="submit" class="btn">Order</button>
           </form>
+          </div>
 
           <h2>Orders:</h2>
           <ul id="orders">
