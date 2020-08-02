@@ -7,7 +7,7 @@
     <script src="js/scripts.js"></script>
     <title>Pizza Binge Website</title>
   </head>
-  <body class="pizimg">
+  <body >
     <div class="container">
       <h1>Pizza Binge</h1>
 
@@ -17,17 +17,47 @@
           <h2>Menu:</h2>
           <form id="new-order">
             <div class="form-group">
-              <label for="new-size">Size</label>
-              <input type="text" class="form-control" id="new-size">
+              <label for="new-size-name">Size</label>
+                <select class="form-control">
+                  <option id="small" value="small">Small</option>
+                  <option id="medium" value="medium">Medium</option>
+                  <option id="large" value="large">Large</option>
+                </select>
             </div>
             
             <div class="form-group">
-              <label for="new-crust">Crust</label>
-              <input type="text" class="form-control" id="new-crust">
+              <label for="new-crust-name">Crust</label>
+              <select class="form-control">
+                <option id="crispy" value="crispy">Crispy</option>
+                <option id="stuffed" value="stuffed">Stuffed</option>
+                <option id="glutten" value="glutten-free">GluttenFree</option>
+              </select>
             </div>
-            
 
-            <button type="submit" class="btn">Add</button>
+            <div class="form-group">
+              <label for="toppings">Toppings</label>
+              <select class="form-control">
+                <option id="cheese" value="crispy">Extra Cheese</option>
+                <option id="extra beef" value="stuffed">Extra beef</option>
+                <option id="extra chicken" value="glutten-free">Extra Chicken</option>
+              </select>
+            </div>
+          
+            <div class="form-group">
+              <label for="amount">Number of Pizzas</label>
+              <input type="number" class="form-control number" required>
+            </div>
+            <p>Do you want your pizza delivered to you?</p>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="delivery-yes">Yes</label>
+              <input class="form-check-input" type="radio" name="delivery-yes" id="delivery-yes" value="delivery-yes" >
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="delivery-no">No</label>
+              <input  type="radio" class="form-check-input" name="delivery-no" id="delivery-no" value="delivery-no">
+            </div>
+          </div>
+            <button type="submit" class="btn">Order</button>
           </form>
 
           <h2>Orders:</h2>
