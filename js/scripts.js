@@ -7,25 +7,24 @@ Contact.prototype.fullName = function() {
   return this.sizeName + " " + this.crustName;
 }
 
+  $(document).ready(function() {
+   $("form#new-order").submit(function(event) {
+     event.preventDefault();
 
-$(document).ready(function() {
-  $("form#new-contact").submit(function(event) {
-    event.preventDefault();
+     var inputtedSizeName = $("input#new-size-name").val();
+     var inputtedCrustName = $("input#new-crust-name").val();
 
-    var inputtedsizeO = $("input#new-size").val();
-    var inputtedcrustO = $("input#new-crust").val();
+     var newContact = new Contact(inputtedSizeName, inputtedCrustName);
+     $("ul#orders").text(newContact.fullName());
 
-    var newContact = new Contact(inputtedsizeName, inputtedcrustName);
-    $("ul#orders").append("<li><span class='order'>" + newContact.sizeName() + "</span></li>");
-
-    $("input#new-size").val("");
-    $("input#new-crust").val("");
+     $("input#new-size-name").val("");
+     $("input#new-crust-name").val("");
      $(".order").last().click(function() {
-      $("#show-order").show();
-      $("#show-order h2").text(newContact.fullName());
-      $(".size-name").text(newContact.sizeO);
-      $(".crust-name").text(newContact.crustO);
-     }); 
-  });
+       $("#show-order").show();
+       $("#show-order h2").text(newContact.fullName());
+       $(".size-name").text(newContact.sizeName);
+       $(".crust-name").text(newContact.crustName);
+      }); 
+   });
   
-}); 
+ }); 
