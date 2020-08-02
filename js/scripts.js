@@ -1,48 +1,50 @@
-function Contact(size, crust) {
-  this.sizeName = size;
-  this.crustName = crust;
-}
-
-Contact.prototype.fullName = function() {
-  return this.sizeName + " " + this.crustName;
-}
-
-  $(document).ready(function() {
-   $("form#new-order").submit(function(event) {
-     event.preventDefault();
-
-     var inputtedSizeName = $("input#new-size-name").val();
-     var inputtedCrustName = $("input#new-crust-name").val();
-
-     var newContact = new Contact(inputtedSizeName, inputtedCrustName);
-     
-     $("ul#orders").text(newContact.fullName());
-
-     $("input#new-size-name").val("");
-     $("input#new-crust-name").val("");
-     $(".order").last().click(function() {
-       $("#show-order").show();
-       $("#show-order h2").text(newContact.fullName());
-       $(".size-name").text(newContact.sizeName);
-       $(".crust-name").text(newContact.crustName);
-      }); 
-   });
-  
- }); 
-
-function Pizza (name,size,delivery,price) {
-  this.name=name;
-  this.size=size;
-  this.crust = crust;
-  this.toppings = toppings;
-  this.number = number;
-  this.delivery = delivery;
+function Pizza (name,size,crust,toppings,number,delivery) {
+  this.pname = name;
+  this.psize = size;
+  this.pcrust = crust;
+  this.ptoppings = toppings;
+  this.pnumber = number;
+  this.pdelivery = delivery;
   }
+  Pizza.protoype.orderDetails= function(){
+    return this.pname;
+  };
   
-  var smallPizza1= new Pizza("small Pizza","small","no",50);
-  var smallPizza2= new Pizza("small Pizza","small","yes",100);
   
-  var mdPizza1 = new Pizza("Medium Pizza","medium","no",150);
-  var mdPizza1 = new Pizza("Medium Pizza","medium","no",150);
   
-  $do
+  $(document).ready(function(){
+    $("form#new-order").submit(function(event) {
+      event.preventDefault();
+
+      var namePizza= $("input#first-name").val();
+      var sizePizza= $("input#first-size").val();
+      var crustPizza= $("input#first-crust").val();
+      var toppingsPizza= $("input#first-toppings").val();
+      var numberPizza= $("input#first-number").val();
+      var deliveryPizza= $("input#first-delivery").val();
+
+      var newPizza = new Pizza(namePizza,sizePizza,crustPizza,toppingsPizza,numberPizza,deliveryPizza);
+    
+      alert("huraaa");
+      //$("ul#orders").text(newPizza.orderDetails());
+
+      //$("input#name").val("");
+     // $("input#size").val("");
+      //$("input#crust").val("");
+      //$("input#toppings").val("");
+      //$("input#number").val("");
+     // $("input#delivery").val("");
+
+      //$(".order").last().click(function() {
+       // $("#show-order").show();
+        //$("#show-order h2").text(newPizza.name());
+       // $(".name").text(newPizza.name);
+        //$(".size").text(newPizza.size);
+       // $(".crust").text(newPizza.crust);
+       // $(".toppings").text(newPizza.toppings);
+       // $(".number").text(newPizza.number);
+       // $(".delivery").text(newPizza.delivery);
+      //});
+     
+  })
+});
