@@ -15,6 +15,7 @@ Contact.prototype.fullName = function() {
      var inputtedCrustName = $("input#new-crust-name").val();
 
      var newContact = new Contact(inputtedSizeName, inputtedCrustName);
+     
      $("ul#orders").text(newContact.fullName());
 
      $("input#new-size-name").val("");
@@ -28,3 +29,20 @@ Contact.prototype.fullName = function() {
    });
   
  }); 
+
+function Pizza (name,size,delivery,price) {
+  this.name=name;
+  this.size=size;
+  this.crust = crust;
+  this.toppings = toppings;
+  this.number = number;
+  this.delivery = delivery;
+  }
+  
+  var smallPizza1= new Pizza("small Pizza","small","no",50);
+  var smallPizza2= new Pizza("small Pizza","small","yes",100);
+  
+  var mdPizza1 = new Pizza("Medium Pizza","medium","no",150);
+  var mdPizza1 = new Pizza("Medium Pizza","medium","no",150);
+  
+  $do
