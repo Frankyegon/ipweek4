@@ -7,15 +7,15 @@
     <script src="js/scripts.js"></script>
     <title>Pizza Binge Website</title>
   </head>
-  <body >
+  <body class="pizimg">
     <div class="container">
-      <h1>Pizza Binge</h1>
+      <h1 style="background-color: red;">Pizza Binge</h1>
 
       <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-8">
           <h2>Menu:</h2>
-          <form id="new-contact">
+          <form id="new-contact" >
             <div class="form-group">
               <label for="name">User name</label>
               <input type="text" class="form-control" id="first-name">
@@ -46,9 +46,9 @@
           
 
           <h2>Orders:</h2>
-          <ul id="orders"></ul>
+          <ul class="wte" id="orders"></ul>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div id="show-order">
               <h2></h2>
     
@@ -57,6 +57,7 @@
               <p>Toppings: <span class="toppings-name"></span></p>
               <p>Number of Pizzas: <span class="number-name"></span></p>
               <p>Do you want it delivered?: <span class="delivery-name"></span></p>
+              <p>Price:</p>
           </div>
         </div>
       </div>
