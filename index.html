@@ -3,7 +3,7 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.5.1.0.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
     <script src="js/scripts.js"></script>
     <title>Pizza Binge Website</title>
   </head>
@@ -15,64 +15,49 @@
 
         <div class="col-md-6">
           <h2>Menu:</h2>
-          <form id="new-order">
+          <form id="new-contact">
             <div class="form-group">
               <label for="name">User name</label>
               <input type="text" class="form-control" id="first-name">
             </div>
             <div class="form-group">
-              <label for="new-size-name">Size</label>
-                <select class="form-control" id="first-size">
-                  <option  value="small">Small</option>
-                  <option  value="medium">Medium</option>
-                  <option  value="large">Large</option>
-                </select>
+              <label for="size">Pizza size</label>
+              <input type="text" class="form-control" id="first-size" placeholder="small/medium/large" required>
             </div>
-            
             <div class="form-group">
-              <label for="new-crust-name">Crust</label>
-              <select class="form-control" id="first-crust">
-                <option  value="crispy">Crispy</option>
-                <option  value="stuffed">Stuffed</option>
-                <option  value="glutten-free">GluttenFree</option>
-              </select>
+              <label for="crust">Pizza Crust</label>
+              <input type="text" class="form-control" id="first-crust" placeholder="crispy/stuffed/gluten-free">
             </div>
-
             <div class="form-group">
-              <label for="toppings">Toppings</label>
-              <select class="form-control" id="first-toppings">
-                <option value="cheese">Extra Cheese</option>
-                <option value="beef">Extra beef</option>
-                <option value="chicken">Extra Chicken</option>
-              </select>
+              <label for="topping">Topping</label>
+              <input type="text" class="form-control" id="first-toppings" placeholder="none/extra cheese/beef/chicken">
             </div>
-          
             <div class="form-group">
               <label for="amount">Number of Pizzas</label>
               <input id="first-number" type="number" class="form-control number" min="1" max="5" required>
             </div>
             <div class="form-group">
-              <label for="delivery">Do you want it delivered?</label>
-              <select class="form-control" id="first-delivery">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
+              <label for="delivery">Do ypu want it to be delivered?</label>
+              <input type="text" class="form-control" id="first-delivery" placeholder="yes/no">
             </div>
           
-            <button type="submit" class="btn">Order</button>
+            <button type="submit">Order</button>
           </form>
           
 
           <h2>Orders:</h2>
-          <ul id="orders">
-          </ul>
+          <ul id="orders"></ul>
         </div>
         <div class="col-md-6">
             <div id="show-order">
               <h2></h2>
           
+              <p>name: <span class="name-name"></span></p>
               <p>size: <span class="size-name"></span></p>
               <p>crust: <span class="crust-name"></span></p>
+              <p>toppings: <span class="toppings-name"></span></p>
+              <p>number: <span class="number-name"></span></p>
+              <p>delivery: <span class="delivery-name"></span></p>
           </div>
         </div>
       </div>
