@@ -4,11 +4,12 @@
   
   .order {
     cursor: pointer;
-    color: black;
+    color: red;
   }
   
   .order:hover {
     text-decoration: underline;
+    background-color: yellow;
   }  
 
   .pizimg{
