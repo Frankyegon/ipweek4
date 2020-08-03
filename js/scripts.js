@@ -10,6 +10,11 @@ Pizza.prototype.orderDetails= function(){
   return this.pname + " , " + this.psize + " , "+ this.pcrust + " , " + this.ptoppings + " , " +  
   this.pnumber + " , " +  this.pdelivery;
 }
+
+Pizza.prototype.orderDetails1= function(){
+  return "Dear " + this.pname
+  + " ,your order has been received. Click <span class='order'>here</span> to CHECKOUT";
+}
   
   $(document).ready(function() {
     $("form#new-contact").submit(function(event) {
@@ -25,7 +30,7 @@ Pizza.prototype.orderDetails= function(){
       var newPizza = new Pizza(namePizza,sizePizza,crustPizza,toppingsPizza,numberPizza,deliveryPizza);
     
       //alert(newPizza.orderDetails());
-      $("ul#orders").append("<li><span class= 'order'>" + newPizza.orderDetails() + "</span></li>");
+      $("ul#orders").append("<li>" + newPizza.orderDetails1() + "</li>");
 
       $("input#first-name").val("");
       $("input#first-size").val("");
@@ -36,8 +41,7 @@ Pizza.prototype.orderDetails= function(){
 
       $(".order").last().click(function() {
        $("#show-order").show();
-       $("#show-order h2").text(newPizza.orderDetails());
-      $(".name-name").text(newPizza.pname);
+       $("#show-order h2").text(newPizza.pname);
       $(".size-name").text(newPizza.psize);
       $(".crust-name").text(newPizza.pcrust);
       $(".toppings-name").text(newPizza.ptoppings);
