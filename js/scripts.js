@@ -5,15 +5,14 @@ function Pizza (name,size,crust,toppings,number,delivery) {
   this.ptoppings = toppings;
   this.pnumber = number;
   this.pdelivery = delivery;
-  }
-  Pizza.protoype.orderDetails= function(){
-    return this.pname;
-  };
+}
+Pizza.prototype.orderDetails= function(){
+  return this.pname + " , " + this.psize + " , "+ this.pcrust + " , " + this.ptoppings + " , " +  
+  this.pnumber + " , " +  this.pdelivery;
+}
   
-  
-  
-  $(document).ready(function(){
-    $("form#new-order").submit(function(event) {
+  $(document).ready(function() {
+    $("form#new-contact").submit(function(event) {
       event.preventDefault();
 
       var namePizza= $("input#first-name").val();
@@ -25,26 +24,26 @@ function Pizza (name,size,crust,toppings,number,delivery) {
 
       var newPizza = new Pizza(namePizza,sizePizza,crustPizza,toppingsPizza,numberPizza,deliveryPizza);
     
-      alert("huraaa");
-      //$("ul#orders").text(newPizza.orderDetails());
+      //alert(newPizza.orderDetails());
+      $("ul#orders").append("<li><span class= 'order'>" + newPizza.orderDetails() + "</span></li>");
 
-      //$("input#name").val("");
-     // $("input#size").val("");
-      //$("input#crust").val("");
-      //$("input#toppings").val("");
-      //$("input#number").val("");
-     // $("input#delivery").val("");
+      $("input#first-name").val("");
+      $("input#first-size").val("");
+      $("input#first-crust").val("");
+      $("input#first-toppings").val("");
+      $("input#first-number").val("");
+      $("input#first-delivery").val("");
 
-      //$(".order").last().click(function() {
-       // $("#show-order").show();
-        //$("#show-order h2").text(newPizza.name());
-       // $(".name").text(newPizza.name);
-        //$(".size").text(newPizza.size);
-       // $(".crust").text(newPizza.crust);
-       // $(".toppings").text(newPizza.toppings);
-       // $(".number").text(newPizza.number);
-       // $(".delivery").text(newPizza.delivery);
-      //});
+      $(".order").last().click(function() {
+       $("#show-order").show();
+       $("#show-order h2").text(newPizza.orderDetails());
+      $(".name-name").text(newPizza.pname);
+      $(".size-name").text(newPizza.psize);
+      $(".crust-name").text(newPizza.pcrust);
+      $(".toppings-name").text(newPizza.ptoppings);
+      $(".number-name").text(newPizza.pnumber);
+      $(".delivery-name").text(newPizza.pdelivery);
+      });
      
   })
 });
