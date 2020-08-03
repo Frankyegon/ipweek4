@@ -13,7 +13,15 @@
   }  
 
   .pizimg{
+    color: black;
     background-image: url(pizza.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    
+  }
+  img{
+    filter: blur(5px) brightness(90%);
+  }
+  .wte{
+    background-color: white;
   }
